@@ -1,0 +1,189 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f4f7fb;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #004d73;
+  color: white;
+  padding: 15px 25px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  color: #ffdd00;
+}
+
+/* Card Container */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  animation: cardFadeIn 0.6s ease forwards;
+}
+
+/* Buttons fade-in animation */
+@keyframes buttonFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-button {
+  opacity: 0;
+  animation: buttonFadeIn 0.5s ease forwards;
+}
+
+/* Table */
+.invoice-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.invoice-table th {
+  background: #004d73;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+}
+
+.invoice-table td {
+  padding: 12px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Table row fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-row {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Selected row cells except Amount */
+.invoice-table tr.selected td:not(:nth-child(5)) {
+  background: #d1ecf1;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Row hover */
+.invoice-table tr:hover td:not(:nth-child(5)) {
+  background: #eef6fc;
+}
+
+/* Buttons */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #fff;
+}
+
+/* Disabled */
+.download-btn:disabled {
+  background: #a0c4ff;
+  cursor: not-allowed;
+}
+
+/* Hover bounce + shadow lift */
+.download-btn:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Fetch Button */
+.card > .download-btn:first-child {
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #28a745, #3cd55a);
+}
+
+.card > .download-btn:first-child:hover:not(:disabled) {
+  background: linear-gradient(90deg, #218838, #32c453);
+}
+
+/* Download Selected Button */
+.card > .download-btn:last-child {
+  background: linear-gradient(90deg, #007bff, #00aaff);
+}
+
+.card > .download-btn:last-child:hover:not(:disabled) {
+  background: linear-gradient(90deg, #0056b3, #0077cc);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .invoice-table th,
+  .invoice-table td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .navbar {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+  }
+
+  .navbar .logo {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
